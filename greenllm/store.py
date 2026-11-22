@@ -8,6 +8,7 @@ import threading
 import time
 from typing import Any
 
+from . import __author__, __version__
 from . import similar as S
 from .energy import Usage, gco2, model_class, wh_range
 
@@ -182,6 +183,7 @@ class Store:
         saved = [baseline[0] - actual[0], baseline[1] - actual[1]]
         pct = 100.0 * saved[1] / baseline[1] if baseline[1] else 0.0
         return {
+            "tool": f"GreenLLM {__version__} by {__author__}",
             **tot,
             "by_model": by_model,
             "energy_wh": {"actual": actual, "baseline": baseline, "saved": saved,

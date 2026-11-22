@@ -1,7 +1,9 @@
 [project]
 name = "greenllm"
-version = "0.1.0"
+version = "0.1.1"
 description = "Energy-aware gateway for LLM APIs (Anthropic + OpenAI): caching, prompt caching, output caps and energy/carbon metering."
+authors = [{ name = "Ashraf Al tarawneh" }]
+license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = ["fastapi>=0.110", "httpx>=0.27", "uvicorn>=0.29"]
 

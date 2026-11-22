@@ -4,6 +4,8 @@ from __future__ import annotations
 from html import escape
 from typing import Any
 
+from . import __author__, __version__
+
 
 def _rng(pair: list[float], unit: str) -> str:
     return f"{pair[0]:.3g} – {pair[1]:.3g} {unit}"
@@ -40,11 +42,12 @@ body{{margin:0;padding:24px 16px;font-family:system-ui,sans-serif;background:var
 h1{{margin:0 0 4px;color:var(--accent)}} p{{color:var(--muted);margin:0 0 20px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}}
 .card{{background:var(--card);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px}}
+.by{{margin:0 0 8px;font-weight:600;color:var(--fg)}}
 .card span{{color:var(--muted);font-size:.9em}} .card b{{font-size:1.25em}}
 table{{margin-top:20px;border-collapse:collapse;width:100%;max-width:600px}}
 td{{padding:6px 8px;border-bottom:1px solid var(--muted)}}
 </style></head><body>
-<h1>GreenLLM</h1><p>{escape(s['note'])}</p>
+<h1>GreenLLM</h1><p class=by>تطوير: {escape(__author__)} · الإصدار {__version__}</p><p>{escape(s['note'])}</p>
 <div class=grid>{card_html}</div>
 <table><tr><td><b>النموذج</b></td><td><b>الطلبات</b></td></tr>{rows}</table>
 </body></html>"""

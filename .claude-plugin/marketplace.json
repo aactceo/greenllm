@@ -1,11 +1,21 @@
 {
   "name": "greenllm",
-  "owner": { "name": "GreenLLM" },
+  "owner": {
+    "name": "Ashraf Al tarawneh"
+  },
+  "metadata": {
+    "description": "GreenLLM by Ashraf Al tarawneh: tools to cut the energy and carbon footprint of LLM use.",
+    "version": "0.1.1"
+  },
   "plugins": [
     {
       "name": "green-ai",
       "source": "./claude-plugin",
-      "description": "Token- and energy-efficient working habits for Claude Code, plus a per-session energy/carbon estimate."
+      "description": "Token- and energy-efficient working habits for Claude Code, plus a per-session energy/carbon estimate.",
+      "version": "0.1.1",
+      "author": {
+        "name": "Ashraf Al tarawneh"
+      }
     }
   ]
 }

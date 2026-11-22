@@ -66,7 +66,8 @@ def main() -> None:
         f"🌱 Session so far: {len(messages)} model calls, "
         f"{tot['in'] + tot['write']:,} new input + {tot['read']:,} cached input + {tot['out']:,} output tokens. "
         f"Estimated {wh[0]:.2g}–{wh[1]:.2g} Wh, {co2[0]:.2g}–{co2[1]:.2g} g CO₂e "
-        f"(prompt caching saved ~{saved:.0f}%; estimates, not measurements)."
+        f"(prompt caching saved ~{saved:.0f}%; estimates, not measurements). "
+        f"GreenLLM by Ashraf Al tarawneh"
     )
     print(json.dumps({"systemMessage": msg, "suppressOutput": True}))
 
