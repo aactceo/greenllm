@@ -27,11 +27,12 @@ def render_dashboard(s: dict[str, Any]) -> str:
         ("رموز الإدخال / الإخراج", f"{s['input_tokens']} / {s['output_tokens']}"),
         ("رموز مقروءة من Prompt Cache", f"{s['cache_read_tokens']}"),
         ("إصابات مطابقة / متشابهة", f"{s['cache_hits_exact']} / {s['cache_hits_similar']}"),
-        ("طلبات وُجّهت لنموذج أصغر", f"{s['routed']} (أُعيد {s['escalated']} للنموذج الأصلي)"),
+        ("طلبات وُجّهت لنموذج أصغر", f"{s['routed']}"),
+        ("أُعيدت للنموذج الأصلي", f"{s['escalated']}"),
         ("قابلة للتوجيه (وضع المراقبة)", f"{s['would_route']}"),
         ("توفير محتمل من التوجيه (تقدير)", _rng(e["potential_from_routing"], "Wh")),
     ]
-    card_html = "".join(f"<div class=card><span>{k}</span><b>{v}</b></div>" for k, v in cards)
+    card_html = "".join(f"<div class=card><span>{k}</span><b dir=ltr>{v}</b></div>" for k, v in cards)
     return f"""<!doctype html><html lang=ar dir=rtl><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><title>GreenLLM</title>
 <meta http-equiv=refresh content=15>
@@ -43,11 +44,11 @@ h1{{margin:0 0 4px;color:var(--accent)}} p{{color:var(--muted);margin:0 0 20px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}}
 .card{{background:var(--card);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px}}
 .by{{margin:0 0 8px;font-weight:600;color:var(--fg)}}
-.card span{{color:var(--muted);font-size:.9em}} .card b{{font-size:1.25em}}
+.card span{{color:var(--muted);font-size:.9em}} .card b{{font-size:1.25em;text-align:right}}
 table{{margin-top:20px;border-collapse:collapse;width:100%;max-width:600px}}
 td{{padding:6px 8px;border-bottom:1px solid var(--muted)}}
 </style></head><body>
-<h1>GreenLLM</h1><p class=by>تطوير: {escape(__author__)} · الإصدار {__version__}</p><p>{escape(s['note'])}</p>
+<h1>GreenLLM</h1><p class=by>تطوير: {escape(__author__)} · الإصدار {__version__}</p><p>قيم الطاقة والكربون تقديرات (أدنى – أعلى) مبنية على معاملات مفترضة، أما نسبة التوفير فمقارنة نسبية بالمعاملات نفسها. أعداد الرموز حقيقية من ردود المزوّد.</p>
 <div class=grid>{card_html}</div>
 <table><tr><td><b>النموذج</b></td><td><b>الطلبات</b></td></tr>{rows}</table>
 </body></html>"""

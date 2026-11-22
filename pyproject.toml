@@ -1,6 +1,6 @@
 [project]
 name = "greenllm"
-version = "0.1.2"
+version = "0.1.3"
 description = "Energy-aware gateway for LLM APIs (Anthropic + OpenAI): caching, prompt caching, output caps and energy/carbon metering."
 authors = [{ name = "Ashraf Al tarawneh" }]
 license = { text = "MIT" }
