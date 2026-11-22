@@ -1,0 +1,11 @@
+{
+  "name": "greenllm",
+  "owner": { "name": "GreenLLM" },
+  "plugins": [
+    {
+      "name": "green-ai",
+      "source": "./claude-plugin",
+      "description": "Token- and energy-efficient working habits for Claude Code, plus a per-session energy/carbon estimate."
+    }
+  ]
+}

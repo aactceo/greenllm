@@ -1,0 +1,6 @@
+{
+  "name": "green-ai",
+  "version": "0.1.0",
+  "description": "Token- and energy-efficient working habits for Claude Code, plus a per-session energy/carbon estimate.",
+  "license": "MIT"
+}
