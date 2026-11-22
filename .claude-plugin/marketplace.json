@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "GreenLLM by Ashraf Al tarawneh: tools to cut the energy and carbon footprint of LLM use.",
-    "version": "0.1.1"
+    "version": "0.1.2"
   },
   "plugins": [
     {
       "name": "green-ai",
       "source": "./claude-plugin",
       "description": "Token- and energy-efficient working habits for Claude Code, plus a per-session energy/carbon estimate.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "author": {
         "name": "Ashraf Al tarawneh"
       }
